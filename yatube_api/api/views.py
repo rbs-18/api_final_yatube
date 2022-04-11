@@ -19,7 +19,7 @@ class CreateViewSet(viewsets.ModelViewSet):
 class CreateListViewSet(
         mixins.CreateModelMixin, mixins.ListModelMixin,
         viewsets.GenericViewSet
-        ):
+):
     pass
 
 
