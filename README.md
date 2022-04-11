@@ -9,47 +9,50 @@ API service for social network Yatube. Users can published their posts, comment 
 
  - #### GETTING TOKEN
 
- `/api/v1/jwt/create/` POST
-
+ `/api/v1/jwt/create/` `POST`
+ 
 *Request sample*
-
-    {
-	    "username": "string", (required field)
-	    "password": "string"  (required field)
-	}
+```
+{
+    "username": "string", (required field)
+    "password": "string"  (required field)
+}
+```
 *Responses*
 
 200, 400, 401
 
  - #### REFRESHING TOKEN
 
-`api/v1/jwt/refresh/` POST
+`api/v1/jwt/refresh/` `POST`
 
 *Request sample*
-
-    {
-	    "refresh": "string" (required field)
-	}
+```
+{
+    "refresh": "string" (required field)
+}
+```
 *Responses*
 
 200, 400, 401
 
  - #### CHECKING TOKEN
 
-`api/v1/jwt/verify/` POST
+`api/v1/jwt/verify/` `POST`
 
 *Request sample*
-
-    {
-	    "token": "string" (required field)
-	}
+```
+{
+    "token": "string" (required field)
+}
+```
 *Responses*
 
 200, 400, 401
 ### POSTS
  - #### GETTING LIST OF POSTS
 
- `api/v1/posts/` GET
+ `api/v1/posts/` `GET`
  
  *Query parameters*
  
@@ -61,22 +64,23 @@ API service for social network Yatube. Users can published their posts, comment 
 200
 - #### CREATING NEW POST
 
- `api/v1/posts/` POST (only for authorized users)
+ `api/v1/posts/` `POST` (only for authorized users)
 
-*Request sample (for posting)*
-
-    {
-	    "text": "string", (required field)
-	    "image": "string",
-	    "group": 0 (id)
-	}
+*Request sample*
+```
+{
+    "text": "string", (required field)
+    "image": "string",
+    "group": 0 (id)
+}
+```
 *Responses*
 
 200, 400, 401
 
 - #### GETTING, PATCHING, PUTTING, DELETING POST
 
- ``api/v1/posts/{post_id}/` GET, PUT, PATCH, DELETE (patching, putting, deleting only for author of post)
+ `api/v1/posts/{post_id}/` `GET` `PUT` `PATCH` `DELETE` (patching, putting, deleting only for author of post)
 
 *Responses*
 
@@ -88,7 +92,7 @@ API service for social network Yatube. Users can published their posts, comment 
 
 - #### GETTING GROUPS
 
- `api/v1/groups/` GET
+ `api/v1/groups/` `GET`
  
 *Responses*
 
@@ -96,7 +100,7 @@ API service for social network Yatube. Users can published their posts, comment 
 
 - #### GETTING CERTAIN GROUP
 
- `api/v1/groups/{group_id}/` GET
+ `api/v1/groups/{group_id}/` `GET`
  
 *Responses*
 
@@ -106,27 +110,28 @@ API service for social network Yatube. Users can published their posts, comment 
 
 - #### GETTING ALL COMMENTS FOR POST
 
- `api/v1/posts/{post_id}/comments/` GET
+ `api/v1/posts/{post_id}/comments/` `GET`
  
 *Responses*
 
 200, 404
 - #### CREATING NEW COMMENT
 
- `api/v1/posts/{post_id}/comments/` POST (only for authorized users)
+ `api/v1/posts/{post_id}/comments/` `POST` (only for authorized users)
 
-*Request sample (for posting)*
-
-    {
-	    "text": "string" (required field)
-	}
+*Request sample*
+```
+{
+    "text": "string" (required field)
+}
+```
 *Responses*
 
 201, 400, 401, 404
 
 - #### GETTING, PATCHING, PUTTING, DELETING POST
 
- `api/v1/posts/{post_id}/`GET, PUT, PATCH, DELETE (patching, putting, deleting only for author of comment)
+ `api/v1/posts/{post_id}/` `GET` `PUT` `PATCH` `DELETE` (patching, putting, deleting only for author of comment)
 
 *Responses*
 
@@ -138,7 +143,7 @@ API service for social network Yatube. Users can published their posts, comment 
  ### FOLLOWS
  - #### GETTING ALL FOLLOWS OF USER
 
- `api/v1/follow/` GET (only for authorized users)
+ `api/v1/follow/` `GET` (only for authorized users)
 
 *Query parameters fo getting*
  
@@ -150,13 +155,14 @@ API service for social network Yatube. Users can published their posts, comment 
 
  - #### SUBSCRIBING TO USER
 
- `api/v1/follow/` POST (only for authorized users)
+ `api/v1/follow/` `POST` (only for authorized users)
  
 *Request sample*
-
-    {
-	    "following": "string" (required field)
-	}
+```
+{
+    "following": "string" (required field)
+}
+```
 *Responses*
 
 201, 400, 401
@@ -170,25 +176,27 @@ API service for social network Yatube. Users can published their posts, comment 
 
 ## HOW TO START PROJECT
 Clone repository and going:
-
-    git clone ...
-    cd api_yatube/
+```
+git clone ...
+cd api_yatube/
+```
 Create and activate virtual environment:
-
-    python -m venv venv
-    source venv/Script/activate
-    python -m pip install --upgrade pip
+```
+python -m venv venv
+source venv/Script/activate
+python -m pip install --upgrade pip
+```
 Install dependencies from file requirements.txt:
-
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 Make migrations:
-
-    python manage.py migrate
-
+```
+python manage.py migrate
+```
 Run project:
-
-    python manage.py runserver
-
-
+```
+python manage.py runserver
+```
 # AUTHORS
 *Kozhevnikov Aleksei*
