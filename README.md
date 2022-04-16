@@ -12,7 +12,7 @@ API service for social network Yatube. Users can published their posts, comment 
  `/api/v1/jwt/create/` `POST`
  
 *Request sample*
-```
+```json
 {
     "username": "string", (required field)
     "password": "string"  (required field)
@@ -27,7 +27,7 @@ API service for social network Yatube. Users can published their posts, comment 
 `api/v1/jwt/refresh/` `POST`
 
 *Request sample*
-```
+```json
 {
     "refresh": "string" (required field)
 }
@@ -41,7 +41,7 @@ API service for social network Yatube. Users can published their posts, comment 
 `api/v1/jwt/verify/` `POST`
 
 *Request sample*
-```
+```json
 {
     "token": "string" (required field)
 }
@@ -67,11 +67,11 @@ API service for social network Yatube. Users can published their posts, comment 
  `api/v1/posts/` `POST` (only for authorized users)
 
 *Request sample*
-```
+```json
 {
-    "text": "string", (required field)
+    "text": "string",    (required field)
     "image": "string",
-    "group": 0 (id)
+    "group": 0           (id)
 }
 ```
 *Responses*
@@ -120,7 +120,7 @@ API service for social network Yatube. Users can published their posts, comment 
  `api/v1/posts/{post_id}/comments/` `POST` (only for authorized users)
 
 *Request sample*
-```
+```json
 {
     "text": "string" (required field)
 }
@@ -158,7 +158,7 @@ API service for social network Yatube. Users can published their posts, comment 
  `api/v1/follow/` `POST` (only for authorized users)
  
 *Request sample*
-```
+```json
 {
     "following": "string" (required field)
 }
